@@ -1,0 +1,53 @@
+
+import os
+
+from django.db import models
+from django.contrib import admin
+
+from openPLM.plmapp.filehandlers import HandlersManager
+from openPLM.plmapp.models import Document
+from openPLM.plmapp.controllers import DocumentController
+
+def register(cls):
+    try:
+        admin.site.register(cls)
+    except admin.sites.AlreadyRegistered:
+        pass
+
+class FEM(Document):
+
+# FEM fields
+    #nb_wheels = models.PositiveIntegerField("Number of wheels", default=lambda: 2)
+    #color = models.CharField(max_length=25, blank=False)
+    details = models.TextField(blank=False)
+
+# FEM properties
+    @property
+    def attributes(self):
+        attrs = list(super(FEM, self).attributes)
+        attrs.extend(["details"])
+        return attrs
+
+    # excluded_creation_fields
+    @classmethod
+    def excluded_creation_fields(cls):
+        return super(FEM, cls).excluded_creation_fields() + ["details"]
+
+# end FEM
+
+admin.site.register(FEM)
+
+# class FEMController
+class FEMController(DocumentController):
+
+    def revise(self, new_revision):
+        if new_revision == get_next_revision(get_next_revision(self.revision)):
+            self.details += """
+            ----------------
+            hello easter egg
+            ----------------
+            """
+            self.save()
+        return super(FEMController, self).revise(new_revision)
+
+# end FEMController

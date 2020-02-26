@@ -1,0 +1,500 @@
+5  ls -al /var/mail/
+    6  ls -al /var/mail/ecam
+    7  su ecam
+    8  ls -al /var/mail/ecam
+    9  cat /var/mail/ecam
+   10  cat /var/mail/ecam
+   11  su ecam
+   12  vim settings.py
+   13  service celeryd restart
+   14  service apache2 restart
+   15  cat /var/log/celery/w1.log
+   16  cat /var/log/celery/w1.log
+   17  cat /var/log/celery/w1.log
+   18  cat /var/log/celery/w1.log
+   19  cat /var/log/celery/w1.log
+   20  vim settings.py
+   21  service celeryd restart
+   22  service celeryd stop
+   23  service celeryd start
+   24  service celeryd start
+   25  service celeryd stop
+   26  service celeryd start
+   27  ls /var/run/celery/
+   28  ls -al /var/run/celery/
+   29  cp /var/run/celery/w1.pid /var/run/celery/w1.pid.old
+   30  ls -al /var/run/celery/
+   31  mv /var/run/celery/w1.pid /var/run/celery/w1.pid.old
+   32  ls -al /var/run/celery/
+   33  service celeryd start
+   34  service apache2 restart
+   35  cat /var/log/celery/w1.log
+   36  cat /var/log/celery/w1.log
+   37  date
+   38  cat /var/log/celery/w1.log
+   39  cat /var/log/celery/w1.log
+   40  cat /var/log/celery/w1.log
+   41  cat /var/log/celery/w1.log
+   42  cat /var/log/celery/w1.log
+   43  vim settings.py
+   44  cat /var/log/celery/w1.log
+   45  cat /var/log/celery/w1.log
+   46  cat /var/log/celery/w1.log
+   47  cat /var/log/celery/w1.log
+   48  vim settings.py
+   49  cat /var/log/celery/w1.log
+   50  service celeryd restart
+   51  service apache2 restart
+   52  cat /var/log/celery/w1.log
+   53  cat /var/log/celery/w1.log
+   54  cat /var/log/celery/w1.log
+   55  cat /var/log/celery/w1.log
+   56  cat /var/log/celery/w1.log
+   57  cat /var/log/celery/w1.log
+   58  cat /var/log/celery/w1.log
+   59  cat /var/log/celery/w1.log
+   60  vim settings.py
+   61  cat /var/log/celery/w1.log
+   62  service celeryd stop
+   63  service celeryd start
+   64  mv /var/run/celery/w1.pid /var/run/celery/w1.pid.old
+   65  service celeryd start
+   66  service apache2 restart
+   67  cat /var/log/celery/w1.log
+   68  cat /var/log/celery/w1.log
+   69  cat /var/log/celery/w1.log
+   70  cat /var/log/celery/w1.log
+   71  cat /var/log/celery/w1.log
+   72  cat /var/log/celery/w1.log
+   73  cat /var/log/celery/w1.log
+   74  vim settings.py
+   75  service celeryd restart
+   76  service apache2 restart
+   77  cat /var/log/celery/w1.log
+   78  cat /var/log/celery/w1.log
+   79  cat /var/log/celery/w1.log
+   80  cat /var/log/celery/w1.log
+   81  vim settings.py
+   82  service celeryd restart
+   83  service apache2 restart
+   84  cat /var/log/celery/w1.log
+   85  cat /var/log/celery/w1.log
+   86  vim settings.py
+   87  service celeryd restart
+   88  service apache2 restart
+   89  cat /var/log/celery/w1.log
+   90  cat /var/log/celery/w1.log
+   91  cat /var/log/celery/w1.log
+   92  ping smtp.gmail.com
+   93  cat /var/log/celery/w1.log
+   94  su ecam
+   95  vim /etc/resolv.conf
+   96  init 6
+   97  vim /etc/resolv.conf
+   98  ping smtp.gmail.com
+   99  cat /var/log/mail.log
+  100  cat /var/log/exim4/
+  101  cat /var/log/exim4/mainlog
+  102  cat /var/log/exim4/
+  103  ls /var/log/exim4/
+  104  su ecam
+  105  cd /etc/exim4/
+  106  ls
+   107  ls -al
+  108  ls conf.d/
+  109  ls -al conf.d/
+  110  ls -al conf.d/main/
+  111  cat /var/log/celery/w1.log
+  112  dpkg-reconfigure exim4-config
+  113  su ecam
+  114  cd /var/django/openPLM/trunk/openPLM/
+  115  service celeryd restart
+  116  service apache2 restart
+  117  cat /var/log/celery/w1.log
+  118  vim settings.py
+  119  service celeryd restart
+  120  service celeryd stop
+  121  service celeryd start
+  122  mv /var/run/celery/w1.pid /var/run/celery/w1.pid.old
+  123  service celeryd start
+  124  service celeryd restart
+  125  service apache2 restart
+  126  cat /var/log/celery/w1.log
+  127  ls /var/mail/
+  128  ls /var/mail/ecam
+  129  ls -al /var/mail/ecam
+  130  ls -al /var/mail/
+  131  date
+  132  vim settings.py
+  133  service celeryd restart
+  134  service apache2 restart
+  135  cat /var/log/celery/w1.log
+  136  dpkg-reconfigure exim4-config
+  137  cat /var/log/celery/w1.log
+  138  vim settings.py
+  139  service celeryd restart
+  140  service apache2 restart
+  141  cat /var/log/celery/w1.log
+  142  cat /var/log/celery/w1.log
+  143  cat /var/log/celery/w1.log
+  144  init 0
+  145  ifconfig
+  146  cat /var/log/celery/w1.log
+  147  mail -v -s "essais mardi" pjoulaud@linobject.com
+  148  mutt
+  149  su ecam
+  150  cd /var/django/openPLM/trunk/openPLM/
+  151  vim settings.py
+  152  service celeryd restart
+  153  service apache2 restart
+  154  cat /var/log/celery/w1.log
+  155  vim settings.py
+  156  service celeryd restart
+  157  service apache2 restart
+  158  cat /var/log/celery/w1.log
+  159  cat /var/log/celery/w1.log
+  160  cat /var/log/celery/w1.log
+  161  ls -al /var/log
+  162  ls -al /var/log/celery/
+  163  ls -al /var/log/exim4/
+  164  ls -al /var/log/exim4/mainlog
+  165  cat /var/log/exim4/mainlog
+  166  ls -al /var/log
+  167  ls -al /var/log/rabbitmq/
+  168  ct /var/log/rabbitmq/startup_
+  169  cat /var/log/rabbitmq/startup_err
+  170  cat /var/log/rabbitmq/startup_log
+  171  ls -al /var/log/
+  172  cat /var/log/auth.log
+  173  cat /var/log/celery/w1.log
+  174  vim settings.py
+  175  service celeryd restart
+  176  service apache2 restart
+  177  cat /var/log/celery/w1.log
+  178  cat /var/log/celery/w1.log
+  179  cat /var/log/celery/w1.log
+  180  vim settings.py
+  181  service celeryd restart
+  182  service celeryd stop
+  183  service celeryd start
+  184  cd /var/run/celery/
+  185  ls
+  186  mv w1.pid w1.pid.old
+  187  ls
+  188  cd /var/django/openPLM/trunk/openPLM/
+  189  service celeryd start
+  190  service apache2 restart
+  191  cat /var/log/celery/w1.log
+  192  cat /var/log/celery/w1.log
+  193  vim settings.py
+  194  service celeryd restart
+  195  service apache2 restart
+  196  cat /var/log/celery/w1.log
+  197  cat /var/log/celery/w1.log
+  198  cat /var/log/celery/w1.log
+  199  cat /var/log/celery/w1.log
+  200  cat /var/log/celery/w1.log
+  201  service celeryd restart
+  202  service apache2 restart
+  203  vim settings.py
+  204  su postgres
+  205  ./manage.py syncdb --all
+  206  ./manage.py migrate --all --fake
+  207  ./manage.py loaddata extra_lifecycles
+  208  service celeryd restart
+  209  service apache2 restart
+  210  cat /var/log/celery/w1.log
+  211  cat /var/log/celery/w1.log
+  212  ls -al
+  213  ls -al media
+  214  ls -al static/
+  215  ls /var/openPLM
+  216  ls /v
+  217  ls -al apps/
+  218  ls -al apps/document3D/
+  219  ls -al
+  220  ls -al plmapp/
+  221  ls -al plmapp/thumbnailers/
+  222  vim settings.py
+  223  ls -al media
+  224  mkdir media/thumbnails
+  225  ls -al media
+  226  chown www-data: media/thumbnails
+  227  ls -al media
+  228  cat /var/log/celery/w1.log
+  229  ls -al media/thumbnails/
+  230  ls -al media/thumbnails/
+  231  ls -al media/thumbnails/
+  232  cat /var/log/celery/w1.log
+  233  cat /var/log/celery/w1.log
+  234  ls -al media/thumbnails/
+  235  init 0
+  236  cd /var/django/openPLM/trunk/openPLM/
+  237  cp settings.py settings.py.20131023
+  238  svn up
+  239          find path/to/openPLM -name '*.pyc' -delete
+  240  ./manage.py migrate
+  241  make
+  242  ./bin/translate_all.sh compile all
+  243  ./manage.py rebuild_index
+  244  chown www-data:www-data -R /var/openPLM
+  245  ./manage.py collectstatic
+  246  chown www-data:www-data -R /var/openPLM
+  247  chown www-data:www-data -R /var/django/openPLM/trunk/openPLM/media/thumbnails
+  248  chown www-data:www-data -R /var/django/openPLM/trunk/openPLM/media/3D
+  249  service celeryd restart
+  250  service apache2 restart
+  251  man svn
+  252  svn help
+  253  svn up help
+  254  svn up -r 2578
+  255  service celeryd restart
+  256  service apache2 restart
+  257  init 0
+  258  cd /var/django/openPLM/trunk/openPLM/
+  259  su postgres
+  260  ./manage.py syncdb --all
+  261  ./manage.py migrate --all --fake
+  262  ./manage.py rebuild_index
+  263  chown -R www-data:www-data /var/openPLM/xapian_index
+  264  service apache2 restart
+  265  service celeryd restart restart
+  266  init 0
+  267  init 0
+  268  ifconfig
+  269  service apache2 stop
+  270  service apache2 start
+  271  df -h
+  272  htop
+  273  qq~
+  274  service apache2 stop
+  275  qq~
+  276  htop
+  277  service apache2 start
+  278  htop
+  279  init 0
+  280  ifconfig
+  281  init 0
+  282  ifconfig
+  283  init 0
+  284  cd /var/django/openPLM/trunk/openPLM/
+  285  ls -al media/3D/
+  286  ls -al media/3D/geo/
+  287  ls | xargs cat | grep media3D
+  288  find . -type f | xargs cat | grep media3D
+  289  vim settings.py
+  290  ifconfig
+  291  htop
+  292  init 0
+  293  vim /etc/hostname
+  294  vim /etc/hosts
+  295  init 6
+  296  cat /var/log/celery/w1.log
+  297  rabbitmqctl add_user openplm 'lemon'
+  298  rabbitmqctl add_vhost openplm
+  299  rabbitmqctl set_permissions -p openplm openplm ".*" ".*" ".*"
+  300  vim /var/django/openPLM/trunk/openPLM/settings.py
+  301  service apache2 restart
+  302  service celeryd restart
+  303  cd /var/openPLM
+  304  ls
+  305  cd docs/
+  306  ls
+  307  rm -rf ./*
+  308  ls
+  309  cd /var/django/openPLM/trunk/openPLM/
+  310  cd media
+  311  ls
+  312  cd 3D/
+  313  ls
+  314  rm ./arb/*
+  315  rm ./geo/*
+  316  cd ..
+  317  ls
+  318  rm ./avatars/*
+  319  rm ./thumbnails/*
+  320  cd ..
+  321  su postgres
+  322  su postgres
+  323  ./manage.py syncdb --all
+  324  ./manage.py migrate --all --fake
+  325  ./manage.py rebuild_index
+  326  chown -R www-data:www-data /var/openPLM
+  327  cd vm_community/
+  328  cp initialisation.py /var/django/openPLM/trunk/openPLM/
+  329  cp initialisation /etc/init.d/
+  330  update-rc.d initialisation defaults
+  331  vim /var/django/openPLM/trunk/openPLM/initialisation.py
+  332  init 6
+  333  vim /var/django/openPLM/trunk/openPLM/initialisation.py
+  334  init 6
+  335  ls -al /var/openPLM
+  336  ls -al /var/openPLM/docs/
+  337  pip install netifaces
+  338  init 6
+  339  vim /var/django/openPLM/trunk/openPLM/initialisation.py
+  340  vim /var/django/openPLM/trunk/openPLM/settings.py
+  341  init 6
+  342  find / -name \*ecamplm\*
+  343  find / -name \*ecamplm\* | xargs rm
+  344  ls /var/lib/rabbitmq/mnesia/
+  345  ls -al /var/lib/rabbitmq/mnesia/
+  346  rm -rf /var/lib/rabbitmq/mnesia/rabbit@ecam*
+  347  ls -al /var/lib/rabbitmq/mnesia/
+  348  find / -name \*ecam\*
+  349  find / -name \*ecam\* | xargs rm
+  350  find / -name \*ecam\* | xargs rm -rf
+  351  find / -name \*ecam\*
+  352  find / -name \*caplinea\*
+  353  find / -name \*caplinea\* | xargs rm -rf
+  354  find / -name \*.log.\*
+  355  find / -name \*2012\*
+  356  find / -name \*.2012\*
+  357  find / -name \*.2012\* | xargs rm
+  358  find / -name \*.2013\*
+  359  find / -name \*.2013\* | xargs rm
+  360  find / -name \*.2013\* | xargs rm -rf
+  361  init 0
+  362  passwd
+  363  find /var/log -type f | awk '{print "echo -n > "$1}' | sh
+  364  ls -al /var/log
+  365  ls -al /var/log/apache2/
+  366  ls -al /var/log/celery/
+  367  init 6
+  368  init 0
+  369  sudo apt-get update
+  370  apt-get update
+  371  apt-get upgrade
+  372  env | grep LANG
+  373  export LANG=en_EN.UTF-8
+  374  env | grep LANG
+  375  apt-get update
+  376  nano
+  377  cd /etc/apt/sources.list
+  378  cd /etc/apt/
+  379  nano sources.list
+  380  apt-get update
+  381  nano sources.list
+  382  apt-get update
+  383  nano sources.list
+  384  apt-get update
+  385  apt-get upgrade
+  386  ifconfig
+  387  cd /
+  388  ls
+  389  cd home
+  390  ls
+  391  exit
+  392* lshistory > history_for_print.txt
+  393  cd /
+  394  ls
+  395  cd sys
+  396  ls
+  397  cd /
+  398  exit
+  399  sudo dpkg-reconfigure locales
+  400  dpkg-reconfigure locales
+  401  sudo
+  402  shutdown -r
+  403  shutdown -r noe
+  404  shutdown -r 1
+  405  exit
+  406  ls
+  407  cd!
+  408  cd !
+  409  q
+  410  dpkg-reconfigure console-data
+  411  apt-get update
+  412  apt-get update
+  413  xkb-switch
+  414  xkb-switch
+  415  apt-get install ifconfig
+  416  ifconfig
+  417  sudo
+  418  su -
+  419  apt-get install sudo -y
+  420  usermod -aG sudo jdehart
+  421  visudo
+  422  apt-get update
+  423  apt-get upgrade
+  424  apt-get autoremove
+  425  apt-get autoclean
+  426  ls
+  427  nano mig*
+  428  ls
+  429  cd vm*
+  430  ls
+  431  cd ..
+  432  ls
+  433  cd Mail
+  434  ls
+  435  cd ~
+  436  l
+  437  ls
+  438  cd /
+  439  ls
+  440  cd mnt
+  441  ls
+  442  cd ~
+  443  ./mamage.[y
+  444  ./mamage.py
+  445  ls
+  446  cd /
+  447  ls
+  448  cd /var
+  449  ls
+  450  cd openPLM
+  451  ls
+  452  cd docs
+  453  ls
+  454  cd ~
+  455  ls
+  456  cd /
+  457  ls
+  458  $PATH
+  459  cd /usr/local
+  460  ls
+  461  cd bin
+  462  ls
+  463  cd ..
+  464  ls
+  465  cd sbin
+  466  ls
+  467  cd ..
+  468  ls
+  469  cd ..
+  470  ls
+  471  cd ..
+  472  ls
+  473  cd var
+  474  ls
+  475  cd django
+  476  ls
+  477  cd openPLM
+  478  ls
+  479  cd trunk
+  480  ls
+  481  cd openPLM
+  482  ls
+  483  nano settings.py
+  484  cd ..
+  485  cd ..
+  486  ls
+  487  cd trun
+  488  cd trunk
+  489  ls
+  490  cd openPLM
+  491  ls
+  492  nano settings.py
+  493  nano settings.py
+  494  nano settings.py
+  495  nano settings.py
+  496  ls
+  497  ./ manage.py migrate ecr
+  498  ./manage.py migrate ecr
+  499  ./manage.py loaddata lifecycles_ecr.json
+  500  reboot
+  501  command | tee ~/outputfile.txt
+  502  ls
+  503  nano out*
+  504  history > history_for_print.txt

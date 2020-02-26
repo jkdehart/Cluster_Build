@@ -1,0 +1,194 @@
+    1  sudo yum install -y nano
+    2  sudo nano /etc/udev/rules.d/100-balloon.rules
+    3  sudo yum install -y hyperv-daemons
+    4  echo noop > /sys/block/sda/queue/scheduler
+    5  yum check-update
+    6  yum update
+    7  shutdown now
+    8  ping wrb-master
+    9  echo 192.168.17.58 wrb-master.alionscience.com wrb-master >> /etc/hosts
+	   echo 192.168.17.57 wrb-license.alionscience.com wrb-license >> /etc/hosts
+   10  ping wrb-master
+   11  selinuxenabled
+   12  selinux enabled
+   13  selinuxenabled
+   14  getenforce
+   15  nano /etc/selinux/config 
+   16  setenforce disabled
+   17  getenforce
+   18  systemctl disable firewalld
+   19  systemctl stop firewalld
+   20  ???yum install http://build.openhpc.community/OpenHPC:/1.3/CentOS_7/aarch64/ohpc-release-1.3-1.el7.aarch64.rpm
+   21  yum install http://build.openhpc.community/OpenHPC:/1.3/CentOS_7/x86_64/ohpc-release-1.3-1.el7.x86_64.rpm
+   22  yum -y install ohpc-base
+   23  yum -y install ohpc-warewulf
+   24  systemctl enable ntpd.service
+   25  echo "server pool.ntp.org" >> /etc/ntp.conf
+   26  systemctl restart ntpd
+   27  yum -y install ohpc-slurm-server
+   28  perl -pi -e "s/ControlMachine=\S+/ControlMachine=wrb-master/" /etc/slurm/slurm.conf
+   29  nano /etc/slurm/slurm.conf
+   30  perl -pi -e "s/^\s+disable\s+= yes/ disable = no/" /etc/xinetd.d/tftp
+   31  ifconfig
+   32  ifconfig /all
+   33  ifconfig
+   34  ifconfig eth1
+   35  ifconfig eth1 10.0.0.1 netmask 255.255.25.0 up
+   36  ifconfig -a
+   37  cd /etc/sysconfig
+   38  ls
+   39  cd net
+   40  cd network-scripts/
+   41  ls
+   42  cat ifcfg-eth0
+   43  system-config-network
+   44  yum install system-config-network-tui
+   45  yum install system-config-network-gui
+   46  yum install system-config-network
+   47  shutdown now
+   48  ls
+   49  ifconfig
+   50  perl -pi -e "s/^\s+disable\s+= yes/ disable = no/" /etc/xinetd.d/tftp
+   51  ifconfig eth1 10.0.0.1 netmask 255.255.255.0 up
+   52  ifconfig
+   53  systemctl restart xinetd
+   54  systemctl enable mariadb.service
+   55  systemctl restart mariadb
+   56  systemctl enable httpd.service
+   57  systemctl restart httpd
+   58  nano /etc/sysconfig/dhcpd 
+   59  systemctl enable dhcpd.service
+   60  cd /etc
+   61  cd dhcp
+   62  ls
+   63  nano dhcpd.conf 
+   64  tail /var/log
+   65  tail /var/log/messages
+   66  ifconfig
+   67  cd /var/log
+   68  ls
+   69  tail messages 
+   70  ls
+   71  ps -ax
+   72  ps -ax | grep dhcp
+   73  ps -ax | grep dhcpd
+   74  ps -ax | grep *dhcp*
+   75  export CHROOT=/opt/ohpc/admin/images/centos7.6
+   76  wwmkchroot centos-7 $CHROOT
+   77  yum -y --installroot=$CHROOT install ohpc-base-compute
+   78  cat /etc/resolv.conf 
+   79  ping wrb-master
+   80  cp -p /etc/resolv.conf $CHROOT/etc/resolv.conf
+   81  yum -y --installroot=$CHROOT install ohpc-slurm-client
+   82  yum -y --installroot=$CHROOT install ntp
+   83  yum -y --installroot=$CHROOT install kernel
+   84  yum -y --installroot=$CHROOT install lmod-ohpc
+   85  wwinit database
+   86  wwinit ssh_keys
+   87  echo "10.0.0.1:/home /home nfs nfsvers=3,nodev,nosuid 0 0" >> $CHROOT/etc/fstab
+   88  echo "10.0.0.1:/opt/ohpc/pub /opt/ohpc/pub nfs nfsvers=3,nodev 0 0" >> $CHROOT/etc/fstab
+   89  echo "/home *(rw,no_subtree_check,fsid=10,no_root_squash)" >> /etc/exports
+   90  echo "/opt/ohpc/pub *(ro,no_subtree_check,fsid=11)" >> /etc/exports
+   91  exportfs -a
+   92  systemctl restart nfs-server
+   93  systemctl enable nfs-server
+   94  chroot $CHROOT systemctl enable ntpd
+   95  echo "server 10.0.0.1" >> $CHROOT/etc/ntp.conf
+   96  echo "account required pam_slurm.so" >> $CHROOT/etc/pam.d/sshd
+   97  perl -pi -e "s/\\#\\\$ModLoad imudp/\\\$ModLoad imudp/" /etc/rsyslog.conf
+   98  perl -pi -e "s/\\#\\\$UDPServerRun 514/\\\$UDPServerRun 514/" /etc/rsyslog.conf
+   99  systemctl restart rsyslog
+  100  echo "*.* @10.0.0.1:514" >> $CHROOT/etc/rsyslog.conf
+  101  perl -pi -e "s/^\*\.info/\\#\*\.info/" $CHROOT/etc/rsyslog.conf
+  102  perl -pi -e "s/^authpriv/\\#authpriv/" $CHROOT/etc/rsyslog.conf
+  103  perl -pi -e "s/^mail/\\#mail/" $CHROOT/etc/rsyslog.conf
+  104  perl -pi -e "s/^cron/\\#cron/" $CHROOT/etc/rsyslog.conf
+  105  perl -pi -e "s/^uucp/\\#uucp/" $CHROOT/etc/rsyslog.conf
+  106  yum -y install ohpc-nagios
+  107  yum -y --installroot=$CHROOT install nagios-plugins-all-ohpc nrpe-ohpc
+  108  chroot $CHROOT systemctl enable nrpe
+  109  perl -pi -e "s/^allowed_hosts=/# allowed_hosts=/" $CHROOT/etc/nagios/nrpe.cfg
+  110  echo "nrpe 5666/tcp # NRPE" >> $CHROOT/etc/services
+  111  echo "nrpe : ${sms_ip} : ALLOW" >> $CHROOT/etc/hosts.allow
+  112  echo "nrpe : 10.0.0.1 : ALLOW" >> $CHROOT/etc/hosts.allow
+  113  nano $CHROOT/etc/hosts.allow
+  114  echo "nrpe : ALL : DENY" >> $CHROOT/etc/hosts.allow
+  115  chroot $CHROOT /usr/sbin/useradd -c "NRPE user for the NRPE service" -d /var/run/nrpe -r -g nrpe -s /sbin/nologin nrpe
+  116  chroot $CHROOT /usr/sbin/groupadd -r nrpe
+  117  mv /etc/nagios/conf.d/services.cfg.example /etc/nagios/conf.d/services.cfg
+  118  mv /etc/nagios/conf.d/hosts.cfg.example /etc/nagios/conf.d/hosts.cfg
+  119  yum -y install ohpc-ganglia
+  120  yum -y --installroot=$CHROOT install ganglia-gmond-ohpc
+  121  cp /opt/ohpc/pub/examples/ganglia/gmond.conf /etc/ganglia/gmond.conf
+  122  perl -pi -e "s/<sms>/wrb-master/" /etc/ganglia/gmond.conf
+  123  cp /etc/ganglia/gmond.conf $CHROOT/etc/ganglia/gmond.conf
+  124  echo "gridname MySite" >> /etc/ganglia/gmetad.conf
+  125  systemctl enable gmond
+  126  systemctl enable gmetad
+  127  systemctl start gmond
+  128  systemctl start gmetad
+  129  chroot $CHROOT systemctl enable gmond
+  130  systemctl try-restart httpd
+  131  yum -y install clustershell-ohpc
+  132  cd /etc/clustershell/groups.d
+  133  mv local.cfg local.cfg.orig
+  134  echo "adm: wrb-master" > local.cfg
+  135  echo "compute: node[1-4]" >> local.cfg
+  136  echo "all: @adm,@compute" >> local.cfg
+  137  yum -y install mrsh-ohpc mrsh-rsh-compat-ohpc
+  138  yum -y --installroot=$CHROOT install mrsh-ohpc mrsh-rsh-compat-ohpc mrsh-server-ohpc
+  139  echo "mshell 21212/tcp # mrshd" >> /etc/services
+  140  echo "mlogin 541/tcp # mrlogind" >> /etc/services
+  141  chroot $CHROOT systemctl enable xinetd
+  142  yum -y install nhc-ohpc
+  143  yum -y --installroot=$CHROOT install nhc-ohpc
+  144  echo "HealthCheckProgram=/usr/sbin/nhc" >> /etc/slurm/slurm.conf
+  145  echo "HealthCheckInterval=300" >> /etc/slurm/slurm.conf # execute every five minutes
+  146  wwsh file import /etc/passwd
+  147  wwsh file import /etc/group
+  148  wwsh file import /etc/shadow
+  149  wwsh file import /etc/slurm/slurm.conf
+  150  wwsh file import /etc/munge/munge.key
+  151  export WW_CONF=/etc/warewulf/bootstrap.conf
+  152  echo "drivers += updates/kernel/" >> $WW_CONF
+  153  echo "drivers += overlay" >> $WW_CONF
+  154  wwbootstrap `uname -r`
+  155  wwvnfs --chroot $CHROOT
+  156  echo "GATEWAYDEV=eth1" > /tmp/network.$$ #### this should be 'eth0'
+  157  wwsh -y file import /tmp/network.$$ --name network
+  158  wwsh -y file set network --path /etc/sysconfig/network --mode=0644 --uid=0
+  159  for ((i=0; i<4; i++)) ; do
+  160  ls
+  161  cd
+  162  ls
+  163  modprobe --first-time 8021q
+  164  modinfo 8021q
+  165  cd /etc/sysconfig/
+  166  cd ls
+  167  ls
+  168  cd network-scripts/
+  169  ls
+  170  nano ifcfg-eth1
+  171  nano ifcfg-eth
+  172  nano ifcfg-eth0
+  173  cp ifcfg-eth0 ifcfg-eth1
+  174  nano ifcfg-eth1
+  175  rm ifcfg-eth1
+  176  ls
+  177  ifconfig
+  178  ifdown eth1
+  179  ifup eth1
+  180  ifconfig
+  181  shutdown -r now
+  182  history > history.out
+  
+  
+  # work related to NAT and forwarding
+  yum install iptables-services -y 
+  iptables -A FORWARD -i eth1 -j ACCEPT
+  iptables -A FORWARD -o eth1 -j ACCEPT
+  
+	#on node
+	 route add default gw 10.0.0.1
+	 
+# Notes --> Is eth1 correct for the node gatewaydev ? It looks like that is the unplugged card. This may be why the network will not restart properly.

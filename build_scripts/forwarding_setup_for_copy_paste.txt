@@ -1,0 +1,16 @@
+#### On Host
+
+iptables -A FORWARD -i eth1 -j ACCEPT
+iptables -A FORWARD -o eth1 -j ACCEPT
+nano /etc/sysctl.conf
+	Add: net.ipv4.ip_forward = 1
+sysctl -p /etc/sysctl.conf 
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE 
+
+#### On Node
+
+sudo -i
+$nano /etc/sysconfig/network-scripts/ifcfg-eth1          ADD: “GATEWAY=10.0.0.1”
+$nano /etc/hosts/         ADD:	192.168.17.57 wrb-license.alionscience.com wrb-licence
+                                192.168.17.58 wrb-master.alionscience.com wrb-master
+
