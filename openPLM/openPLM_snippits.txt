@@ -1,0 +1,51 @@
+# Update the apt sources list
+nano /etc/apt/sources.list
+# remark the existing entries
+deb http://archive.debian.org/debian/ wheezy main contrib non-free
+
+# Chnage from French to English-US
+apt-get install -y console-data
+dpkg-reconfigure locales
+dpkg-reconfigure console-data
+
+
+
+# adduser to sudo
+usermod -aG sudo jdehart
+
+# create app for storage
+cd /var/dj*/open*/trunk/open*
+
+#./manage.py startapp app_name
+./manage.py startapp FEM
+
+# copy FEM_models into FEM/models.py
+
+# Edit the openPLM settings.py and steeings_tests.py
+Edit --> openPLM/settings.py
+Add --> 'openPLM.FEM' to INSTALLED_APPS
+
+# re-itit the db
+./manage.py schemamigration FEM --initial
+./manage.py migrate FEM
+./manage.py rebuild_index 
+
+# note index has to be rebuild after saving new files
+# may need to add to save function
+
+
+# now lets make three parts
+Mechanical
+Electrical
+Software
+
+1. ./manage.py startapp app_name
+2. Edit /app_name/models.py
+3. edit settings.py and settings_tests.py [add openPLM.app_name to INSTALLED_APPS]
+4. ./manage.py schemamigration app_name --initial
+5. ./manage.py migrate app_name
+6. ./manage.py rebuild_index 
+
+
+#load data for ecr app
+./manage.py loaddata lifecycles_ecr.json 

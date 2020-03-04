@@ -370,7 +370,7 @@
   374  env | grep LANG
   375  apt-get update
   376  nano
-  377  cd /etc/apt/sources.list
+  377  export LANG=en_EN.UTF-8
   378  cd /etc/apt/
   379  nano sources.list
   380  apt-get update
@@ -498,3 +498,9 @@
   502  ls
   503  nano out*
   504  history > history_for_print.txt
+  
+  
+  apt-get install -y console-data
+  dpkg-reconfigure locales
+  dpkg-reconfigure console-data
+  deb http://archive.debian.org/debian/ wheezy main contrib non-free
