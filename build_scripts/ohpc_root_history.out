@@ -27,7 +27,7 @@
    26  systemctl restart ntpd
    27  yum -y install ohpc-slurm-server
    28  perl -pi -e "s/ControlMachine=\S+/ControlMachine=wrb-master/" /etc/slurm/slurm.conf
-   29  nano /etc/slurm/slurm.conf
+   29  nano /etc/slurm/slurm.conf [# 1 socket, 68 cores /socket, 4 thread per core]
    30  perl -pi -e "s/^\s+disable\s+= yes/ disable = no/" /etc/xinetd.d/tftp
    31  ifconfig
    32  ifconfig /all
@@ -48,6 +48,7 @@
    47  shutdown now
    48  ls
    49  ifconfig
+       perl 
    50  perl -pi -e "s/^\s+disable\s+= yes/ disable = no/" /etc/xinetd.d/tftp
    51  ifconfig eth1 10.0.0.1 netmask 255.255.255.0 up
    52  ifconfig
@@ -154,7 +155,7 @@
   153  echo "drivers += overlay" >> $WW_CONF
   154  wwbootstrap `uname -r`
   155  wwvnfs --chroot $CHROOT
-  156  echo "GATEWAYDEV=eth1" > /tmp/network.$$ #### this should be 'eth0'
+  156  echo "GATEWAYDEV=eth1" > /tmp/network.$$ #### ?????this should be 'eth0'
   157  wwsh -y file import /tmp/network.$$ --name network
   158  wwsh -y file set network --path /etc/sysconfig/network --mode=0644 --uid=0
   159  for ((i=0; i<4; i++)) ; do
